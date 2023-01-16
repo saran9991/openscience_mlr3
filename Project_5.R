@@ -19,6 +19,9 @@ library(ranger)
 library(xgboost)
 library(R6)
 
+#We first set a seed to ensure reproducibility 
+set.seed(1)
+
 
 tasks = list( tsk('pima') , tsk('sonar'), tsk("oml", task_id = 10093), tsk('oml', task_id=10101) , tsk('oml', task_id= 15)) 
 # Tasks breakdown: 
@@ -37,8 +40,6 @@ rsmp_tuner = rsmp("cv", folds = 3)        # Resampling that is used to evaluate 
 # Section 2: In this section, we define the learners (classifiers), the hyperparameter search space for different learners and benchmark the performance of the learners on the above tasks (datasets) with respect to different evaluation measures
 # Using mlr3pipelines, learner pipelines are created that include mean imputation and scaling preprocessing operators (PipeOps) 
 
-#We first set a seed to ensure reproducibility 
-set.seed(1)
 
 # Baseline Classifier - A featureless classifier which makes random guesses for the correct class
 featureless_lrn = lrn('classif.featureless', predict_type = 'prob')
@@ -454,6 +455,13 @@ grid.arrange(p1rankauc, p2rankauc, p3rankauc, p4rankauc , p5rankauc , ncol = 3) 
 
 
 
+# These are the Classification Error , Brier Score, AUC score for different datasets, learners and pre-processing pipelines
+# One can compare the results obtained in these tables to check for reproducibility
+pipeline_visualize_pima
+pipeline_visualize_sonar
+pipeline_visualize_bank
+pipeline_visualize_blood
+pipeline_visualize_breast
 
 
 

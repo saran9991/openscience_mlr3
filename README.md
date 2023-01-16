@@ -54,7 +54,7 @@ The entire code is divided into 6 sections.
 
 •Section 5: In this section, the hyperparameters are not tuned and are set to arbitrary values to see if there is a change in performance. The pre-processing pipeline is kept same as the one used in Section 2.
 
-•Section 6: After evaluating all the pipelines with different learners and evaluation scores on different datasets, the results are visualized. The Classification Error, Brier Score and AUC Scores are Visualized into a matrix format for all pipelines applied on all datasets. Such a visualization gives a compact and easier comparison of results. The same has been done for the rankings of the learners: For each evaluation measure, the change in rankings is seen with change in the pre-processing pipeline applied on different datasets. 
+•Section 6: After evaluating all the pipelines with different learners and evaluation scores on different datasets, the results are visualized. The Classification Error, Brier Score and AUC Scores are aggregated into a visual matrix format for all pipelines applied on all datasets. Such a visualization gives a compact and easier comparison of results. The same has been done for the rankings of the learners: For each evaluation measure, the change in rankings is seen with change in the pre-processing pipeline applied on different datasets. These results have been stored in a ‘Numerical Results’ file along with all the plots for easy interpretation.  
 
 	
 ## Running the Code
@@ -76,7 +76,7 @@ An important thing to keep in mind is that during benchmarking, the terminal may
 
 It is recommended to execute one code line at a time and not the whole code all at once. For example: It is recommended to move to the next line after benchmarking only after the entire process has finished.
 
-The results should be reproducible in the sense that depending on the pipe-line and evaluation measure, different algorithms could have superior performance based on Classification Error, Brier Score, AUC Score.
+The results should be reproducible in the sense that on running the code, one should notice the change in performance with respect to different pipelines and evaluation measures, as aggregated in the plot images. Due to the seed being set at the start of the code, one should be able to obtain the Plot results and the Numeric Results as stored in the ‘Results’ folder. 
 
 Example: For Classification Error [Refer to Image: Rankings_CE.png] 
 •PIMA Dataset: Change in performance with respect to pipeline is seen in the case of ‘notune’ pipeline where no tuning of the hyperparameters is done.  In this case, Decision Tree seems to perform better than Random Forest. 
