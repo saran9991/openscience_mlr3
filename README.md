@@ -2,6 +2,8 @@
 
 This repository contains the code, related data and documentation for conducting a benchmark analysis on different learners with different evaluation techniques using different pre-processing pipelines with the use of mlr3 and mlr3pipelines packages in R. 
 
+![Brier Score](Results/Brier%20Score.png)
+
 ## Background
 
 Benchmark analyses are often used as a way to evaluate the performance of different models or algorithms. However, these benchmark experiments can be affected by many choices made by the researcher, such as how the data is pre-processed and which evaluation measure is used. These choices, known as "researcher degrees of freedom", can influence the results of the experiment. 
